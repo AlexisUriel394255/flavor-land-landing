@@ -1,0 +1,56 @@
+---
+// src/components/Footer.astro
+const currentYear = new Date().getFullYear();
+---
+<footer id="contacto" class="bg-brand-green-dark text-brand-bg-cream pt-16 pb-8 px-4 border-t-4 border-brand-green-light mt-20">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 items-center text-center md:text-left">
+    
+    <!-- Columna 1: Identidad -->
+    <div class="space-y-4">
+      <div class="flex items-center justify-center md:justify-start gap-3">
+        <img 
+          src="/images/logotipo.webp" 
+          alt="Flavor Land Logo" 
+          class="h-16 w-auto object-contain bg-white/10 p-1.5 rounded-xl"
+          width="64"
+          height="64"
+        />
+        <span class="font-heading text-2xl tracking-wider">FLAVOR LAND</span>
+      </div>
+      <p class="font-body text-brand-bg-cream/70 text-sm max-w-sm font-medium">
+        Llevando el sabor natural y saludable de las frutas deshidratadas artesanales a cada rincón de tu día.
+      </p>
+    </div>
+
+    <!-- Columna 2: Navegación -->
+    <div class="space-y-3">
+      <h4 class="font-heading text-xl text-brand-camote tracking-wide">NAVEGACIÓN</h4>
+      <nav class="flex flex-col gap-2 font-body font-bold text-brand-bg-cream/80 text-sm">
+        <a href="#" class="hover:text-brand-green-light transition-colors">Inicio</a>
+        <a href="#productos" class="hover:text-brand-green-light transition-colors">Nuestros Sabores</a>
+        <a href="#beneficios" class="hover:text-brand-green-light transition-colors">Beneficios</a>
+      </nav>
+    </div>
+
+    <!-- Columna 3: Ventas / Mayoreo -->
+    <div class="space-y-4">
+      <h4 class="font-heading text-xl text-brand-camote tracking-wide">¿PEDIDOS O MAYOREO?</h4>
+      <p class="font-body text-sm font-medium text-brand-bg-cream/70">
+        Ponte en contacto directo con nosotros para surtir tu negocio o resolver dudas.
+      </p>
+      <a 
+        href={`https://wa.me/+523311325566?text=${encodeURIComponent(`Hola, me interesa solicitar información sobre ventas de mayoreo.`)}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 bg-brand-camote hover:bg-brand-camote/90 text-white font-heading px-6 py-3 rounded-xl transition-all duration-300 shadow-md tracking-wide text-sm"
+      >
+        💬 SOLICITAR INFORMACIÓN
+      </a>
+    </div>
+
+  </div>
+
+  <div class="max-w-6xl mx-auto mt-12 pt-8 border-t border-brand-bg-cream/10 text-center font-body text-xs text-brand-bg-cream/50 font-medium">
+    &copy; {currentYear} Flavor Land. Todos los derechos reservados.
+  </div>
+</footer>

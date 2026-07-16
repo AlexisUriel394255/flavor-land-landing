@@ -3,11 +3,12 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import ProductGrid from '../components/ProductGrid.jsx';
+import Footer from '../components/Footer.astro'; // <-- 1. IMPORTAMOS EL FOOTER AQUÍ
 import '../styles/global.css'; 
 ---
 
 <Layout title="Flavor Land | Sabor que te hace bien">
-  <!-- Cabecera Premium con Logotipo integrado -->
+  <!-- Cabecera Premium con Logotipo integrado (Se mantiene intacta) -->
   <header class="bg-brand-bg-cream/90 backdrop-blur-md sticky top-0 z-50 border-b border-brand-green-dark/10 px-4 py-3">
     <div class="max-w-6xl mx-auto flex justify-between items-center">
       <a href="#" class="flex items-center gap-3 hover:opacity-90 transition-opacity">
@@ -44,4 +45,7 @@ import '../styles/global.css';
     <!-- Catálogo Interactivo en React -->
     <ProductGrid client:load />
   </main>
+
+  <!-- 2. INSERTAMOS EL FOOTER AL FINAL DE LA PÁGINA -->
+  <Footer />
 </Layout>
