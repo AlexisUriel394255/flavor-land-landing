@@ -112,14 +112,15 @@ export default function ProductGrid() {
               </h3>
               
               {/* AQUÍ ESTÁ TU NÚMERO Y EL MENSAJE CONFIGURADOS OFICIALMENTE */}
-              <a 
-                href={`https://whatsapp.com{encodeURIComponent(product.name)}`}
+                           <a 
+                href={`https://wa.me/+523311325566?text=${encodeURIComponent(`Hola, me interesa el producto: ${product.name}`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`mt-auto w-full ${product.btnColor} text-white text-center font-heading py-3.5 rounded-xl transition-all duration-300 tracking-wide text-lg shadow-md`}
               >
                 PEDIR POR WHATSAPP
               </a>
+
             </div>
           ))}
         </div>
