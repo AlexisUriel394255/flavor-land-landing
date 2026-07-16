@@ -7,7 +7,7 @@ const productsData = [
     name: 'Betabel Adobado',
     tag: 'Salado / Picosito',
     img: '/images/betabeladobado.webp',
-    bgColor: 'bg-[#9A1B36]/10', // Fondo Betabel suave
+    bgColor: 'bg-[#9A1B36]/10',
     textColor: 'text-[#9A1B36]',
     btnColor: 'bg-[#9A1B36] hover:bg-[#9A1B36]/90'
   },
@@ -16,7 +16,7 @@ const productsData = [
     name: 'Camote Adobado',
     tag: 'Salado / Crunch',
     img: '/images/camoteadobado.webp',
-    bgColor: 'bg-[#E28731]/10', // Fondo Camote suave
+    bgColor: 'bg-[#E28731]/10',
     textColor: 'text-[#E28731]',
     btnColor: 'bg-[#E28731] hover:bg-[#E28731]/90'
   },
@@ -24,9 +24,8 @@ const productsData = [
     id: 3,
     name: 'Jícama con Chile',
     tag: 'El favorito de todos',
-    // CORRECCIÓN: Ajustamos el nombre exacto de la imagen de jícama con chile
-    img: '/images/jicamaconchile.webp', 
-    bgColor: 'bg-[#134323]/10', // Fondo Verde Bosque suave
+    img: '/images/jicamaconchile.webp',
+    bgColor: 'bg-[#134323]/10',
     textColor: 'text-[#134323]',
     btnColor: 'bg-[#134323] hover:bg-[#134323]/90'
   },
@@ -35,7 +34,7 @@ const productsData = [
     name: 'Jícama con Limón',
     tag: 'Fresco y Cítrico',
     img: '/images/jicamaconlimon.webp',
-    bgColor: 'bg-[#60A62E]/10', // Fondo Verde Lima suave
+    bgColor: 'bg-[#60A62E]/10',
     textColor: 'text-[#60A62E]',
     btnColor: 'bg-[#60A62E] hover:bg-[#60A62E]/90'
   },
@@ -44,7 +43,7 @@ const productsData = [
     name: 'Plátano con Canela',
     tag: 'Dulce / Saludable',
     img: '/images/platanoconcanela.webp',
-    bgColor: 'bg-[#E28731]/10', // Fondo Plátano/Camote suave
+    bgColor: 'bg-[#E28731]/10',
     textColor: 'text-[#E28731]',
     btnColor: 'bg-[#E28731] hover:bg-[#E28731]/90'
   }
@@ -72,7 +71,6 @@ export default function ProductGrid() {
             Nuestras frituras artesanales están llenas de sabor y color natural. ¡Sin freír y sin remordimientos!
           </p>
           
-          {/* Botones de Filtro Estilizados */}
           <div className="flex flex-wrap justify-center gap-3 mt-10">
             {categories.map((cat) => (
               <button
@@ -90,14 +88,12 @@ export default function ProductGrid() {
           </div>
         </div>
 
-        {/* Malla Dinámica de Tarjetas de Colores */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
           {filteredProducts.map((product) => (
             <div 
               key={product.id}
-              className={`bg-white rounded-3xl p-6 shadow-lg shadow-[#134323]/5 border border-[#134323]/5 transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl flex flex-col items-center`}
+              className="bg-white rounded-3xl p-6 shadow-lg shadow-[#134323]/5 border border-[#134323]/5 transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl flex flex-col items-center"
             >
-              {/* Contenedor de la Imagen con Fondo de Color Corporativo Dinámico */}
               <div className={`w-full h-64 ${product.bgColor} rounded-2xl p-6 flex items-center justify-center mb-6 overflow-hidden relative group`}>
                 <img 
                   src={product.img} 
@@ -115,8 +111,9 @@ export default function ProductGrid() {
                 {product.name}
               </h3>
               
+              {/* AQUÍ ESTÁ TU NÚMERO Y EL MENSAJE CONFIGURADOS OFICIALMENTE */}
               <a 
-                href={`https://wa.me{encodeURIComponent(product.name)}`}
+                href={`https://whatsapp.com{encodeURIComponent(product.name)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`mt-auto w-full ${product.btnColor} text-white text-center font-heading py-3.5 rounded-xl transition-all duration-300 tracking-wide text-lg shadow-md`}
