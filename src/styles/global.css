@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  /* Configuración de la paleta extraída del logotipo (se queda igual) */
+  /* Tus colores corporativos idénticos se mantienen igual */
   --color-brand-green-dark: #134323;  
   --color-brand-green-light: #60A62E; 
   --color-brand-bg-cream: #FDF9F2;    
@@ -9,7 +9,7 @@
   --color-brand-camote: #E28731;      
   --color-brand-dark: #080708;        
 
-  /* NUEVA CONFIGURACIÓN DE FUENTES (OPCIÓN 2) */
+  /* MAPEADO DE LA NUEVA ESPECIFICACIÓN: Usamos font-sans para Poppins */
   --font-heading: "Bangers", sans-serif;
-  --font-body: "Poppins", sans-serif;
+  --font-sans: "Poppins", sans-serif;
 }

@@ -64,21 +64,19 @@ export default function ProductGrid() {
       <div className="max-w-6xl mx-auto">
         
         <div className="text-center mb-16">
-          {/* TÍTULO PRINCIPAL EN MAYÚSCULAS CON EL GROSOR URBANO DE BANGERS */}
-          <h2 className="font-heading text-5xl md:text-7xl text-[#134323] mb-4 uppercase tracking-wide">
+          <h2 className="font-heading text-4xl md:text-6xl text-[#134323] mb-4 tracking-wide">
             ¡Elige tu Antojo Saludable!
           </h2>
           <p className="font-body text-[#080708]/80 text-lg md:text-xl max-w-2xl mx-auto font-medium">
             Nuestras frituras artesanales están llenas de sabor y color natural. ¡Sin freír y sin remordimientos!
           </p>
           
-          {/* BOTONES DE FILTRO EN MAYÚSCULAS */}
           <div className="flex flex-wrap justify-center gap-3 mt-10">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedTag(cat)}
-                className={`px-8 py-3 rounded-2xl font-heading text-xl uppercase tracking-wider transition-all duration-300 transform active:scale-95 ${
+                className={`px-8 py-3 rounded-2xl font-heading text-lg transition-all duration-300 transform active:scale-95 tracking-wide ${
                   selectedTag === cat
                     ? 'bg-[#134323] text-white shadow-xl shadow-[#134323]/20 scale-105'
                     : 'bg-white text-[#134323] border-2 border-[#134323]/10 hover:border-[#134323]/40 shadow-sm'
@@ -109,13 +107,12 @@ export default function ProductGrid() {
                 {product.tag}
               </span>
               
-              {/* TÍTULO DE LA TARJETA EN MAYÚSCULAS STYLE BANGERS */}
-              <h3 className="font-heading text-3xl text-[#080708] text-center mb-6 uppercase tracking-wide">
+              <h3 className="font-heading text-2xl md:text-3xl text-[#080708] text-center mb-6">
                 {product.name}
               </h3>
               
-              {/* TU BOTÓN DE WHATSAPP GANADOR SE QUEDA EXACTAMENTE IGUAL */}
-              <a 
+              {/* AQUÍ ESTÁ TU NÚMERO Y EL MENSAJE CONFIGURADOS OFICIALMENTE */}
+                           <a 
                 href={`https://wa.me/+523311325566?text=${encodeURIComponent(`Hola, me interesa el producto: ${product.name}`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -131,5 +128,3 @@ export default function ProductGrid() {
     </section>
   );
 }
-
-
