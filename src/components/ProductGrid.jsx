@@ -11,11 +11,11 @@ const productsData = [
     textColor: 'text-[#9A1B36]',
     btnColor: 'bg-[#9A1B36] hover:bg-[#9A1B36]/90'
   },
-  {
+   {
     id: 2,
-    name: 'Camote Adobado',
-    tag: 'Salado / Crunch',
-    img: '/images/camoteadobado.webp',
+    name: 'Camote con Canela',          
+    tag: 'Dulce / Crunch',              
+    img: '/images/camoteconcanela.webp', 
     bgColor: 'bg-[#E28731]/10',
     textColor: 'text-[#E28731]',
     btnColor: 'bg-[#E28731] hover:bg-[#E28731]/90'
