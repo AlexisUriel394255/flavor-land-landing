@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-  /* Configuración de la paleta extraída del logotipo */
-  --color-brand-green-dark: #134323;  /* Verde bosque */
-  --color-brand-green-light: #60A62E; /* Verde lima */
-  --color-brand-bg-cream: #FDF9F2;    /* Fondo crema suave */
-  --color-brand-betabel: #9A1B36;     /* Guinda/Betabel */
-  --color-brand-camote: #E28731;      /* Naranja/Camote */
-  --color-brand-dark: #080708;        /* Títulos oscuros */
+  /* Configuración de la paleta extraída del logotipo (se queda igual) */
+  --color-brand-green-dark: #134323;  
+  --color-brand-green-light: #60A62E; 
+  --color-brand-bg-cream: #FDF9F2;    
+  --color-brand-betabel: #9A1B36;     
+  --color-brand-camote: #E28731;      
+  --color-brand-dark: #080708;        
 
-  /* Configuración de las fuentes de Google Fonts */
-  --font-heading: "Lilita One", sans-serif;
-  --font-body: "Quicksand", sans-serif;
+  /* NUEVA CONFIGURACIÓN DE FUENTES (OPCIÓN 2) */
+  --font-heading: "Bangers", sans-serif;
+  --font-body: "Poppins", sans-serif;
 }

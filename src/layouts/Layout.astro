@@ -20,9 +20,11 @@ const { title } = Astro.props;
 		<title>{title}</title>
 		
 		<!-- Google Fonts Oficial para Opción 1 -->
-		<link rel="preconnect" href="https://googleapis.com">
-		<link rel="preconnect" href="https://gstatic.com" crossorigin>
-		<link href="https://googleapis.com/css2?family=Lilita+One&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+		<!-- src/layouts/Layout.astro (Dentro de la etiqueta <head>) -->
+<link rel="preconnect" href="https://googleapis.com">
+<link rel="preconnect" href="https://gstatic.com" crossorigin>
+<link href="https://googleapis.com/css2?family=Bangers&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 	</head>
 	<body class="bg-brand-bg-cream font-body text-brand-dark min-h-screen antialiased">
 		<slot />
