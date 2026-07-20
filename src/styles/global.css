@@ -9,7 +9,13 @@
   --color-brand-camote: #E28731;      
   --color-brand-dark: #080708;        
 
-  /* MAPEADO DE LA NUEVA ESPECIFICACIÓN: Usamos font-sans para Poppins */
-  --font-heading: "Bangers", sans-serif;
+  /* MAPEADO OFICIAL PARA TU FUENTE VARIABLE DE GOOGLE */
+  --font-heading: "Fredoka", sans-serif;
   --font-sans: "Poppins", sans-serif;
+}
+
+/* FORZAMOS LAS VARIACIONES DEL LOGO PARA TODOS LOS TÍTULOS */
+.font-heading {
+  font-family: "Fredoka", sans-serif;
+  font-variation-settings: 'wdth' 98.3, 'wght' 611;
 }
