@@ -286,20 +286,19 @@ export default function ProductGrid() {
                   </div>
                 </div>
 
-                <a 
+                        <a 
               
 href={`https://wa.me/+523311325566?text=${encodeURIComponent( 
                 `¡Hola Flavor Land! Me interesa hacer un pedido.\n` + 
                 `
 📦
- Producto: ${activeProduct.name}\n` + 
+ Producto: ${activeProduct.name} (${selectedSize ? selectedSize.label : 'Normal'})\n` + 
                 `
 🔢
  Cantidad: ${quantity} bolsa(s)\n` + 
                 `
 💰
- Total estimado: $${activeProduct.price * 
-quantity}.00 MXN` 
+ Total estimado: $${currentPrice * quantity}.00 MXN` 
               )}`} 
               target="_blank" 
               rel="noopener noreferrer" 
@@ -311,7 +310,7 @@ uppercase`}
             > 
              📱 Confirmar Pedido 
             </a> 
- 
+
           </div> 
         </div> 
       </div> 
