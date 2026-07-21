@@ -7,7 +7,7 @@ const productsData = [
     name: 'Betabel Adobado',
     tag: 'Salado / Picosito',
     img: '/images/betabeladobado.webp',
-    price: 110, // <-- Precio real
+    price: 110,
     bgColor: 'bg-[#9A1B36]/10',
     textColor: 'text-[#9A1B36]',
     btnColor: 'bg-[#9A1B36] hover:bg-[#9A1B36]/90'
@@ -17,7 +17,7 @@ const productsData = [
     name: 'Camote con Canela',          
     tag: 'Dulce / Crunch',              
     img: '/images/camoteconcanela.webp', 
-    price: 80, // <-- Precio real
+    price: 80,
     bgColor: 'bg-[#E28731]/10',
     textColor: 'text-[#E28731]',
     btnColor: 'bg-[#E28731] hover:bg-[#E28731]/90'
@@ -53,11 +53,10 @@ const productsData = [
     btnColor: 'bg-[#E28731] hover:bg-[#E28731]/90'
   }
 ];
-
 export default function ProductGrid() {
   const [selectedTag, setSelectedTag] = useState('Todos');
-  const [activeProduct, setActiveProduct] = useState(null); // Controla el modal
-  const [quantity, setQuantity] = useState(1); // Controla las bolsas
+  const [activeProduct, setActiveProduct] = useState(null);
+  const [quantity, setQuantity] = useState(1);
 
   const categories = ['Todos', 'Salado', 'Dulce', 'Jícama'];
 
@@ -71,6 +70,16 @@ export default function ProductGrid() {
     setActiveProduct(product);
     setQuantity(1);
   };
+
+  // MATEMÁTICA DE DESCUENTOS POR VOLUMEN
+  const subtotal = activeProduct ? activeProduct.price * quantity : 0;
+  const isMayoreo = quantity >= 24;
+  const isMedioMayoreo = quantity >= 12 && quantity < 24;
+  
+  const discountPercent = isMayoreo ? 5 : (isMedioMayoreo ? 2.5 : 0);
+  const discountType = isMayoreo ? "Mayoreo (5%)" : "Medio Mayoreo (2.5%)";
+  const discountAmount = (subtotal * discountPercent) / 100;
+  const totalFinal = subtotal - discountAmount;
 
   return (
     <section id="productos" className="py-20 px-4 bg-[#FDF9F2]">
@@ -134,78 +143,120 @@ export default function ProductGrid() {
           ))}
         </div>
       </div>
-
-      {/* ================= MODAL DE CANTIDADES CON COLORES HEXADECIMALES PUROS ================= */}
+         {/* ================= MODAL INTERACTIVO 100% RESPONSIVE (CELULAR Y PC) ================= */}
       {activeProduct && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-          <div className="bg-white w-full max-w-sm rounded-3xl p-6 shadow-2xl relative border border-[#134323]/10 flex flex-col items-center">
+          {/* El contenedor ahora es elástico: max-w-[92%] en celulares pequeños y max-w-md en PC */}
+          <div className="bg-white w-full max-w-[95%] sm:max-w-md rounded-[2rem] p-5 sm:p-8 shadow-2xl relative border border-[#134323]/10 flex flex-col items-center max-h-[92vh] overflow-y-auto">
             
+            {/* Botón Cerrar */}
             <button 
               onClick={() => setActiveProduct(null)}
-              className="absolute top-4 right-4 text-[#080708]/40 hover:text-[#080708] text-xl font-bold cursor-pointer"
+              className="absolute top-4 right-4 sm:top-5 sm:right-5 text-[#080708]/40 hover:text-[#080708] text-xl sm:text-2xl font-bold cursor-pointer p-1"
             >
               ✕
             </button>
 
-            <div className={`w-28 h-28 ${activeProduct.bgColor} rounded-2xl p-3 flex items-center justify-center mb-3`}>
-              <img src={activeProduct.img} alt={activeProduct.name} className="max-h-full object-contain" />
+            {/* 📸 IMAGEN EN ESCALA FLEXIBLE: Se adapta al alto de la pantalla del celular */}
+            <div className={`w-full max-w-[140px] sm:max-w-[185px] h-32 sm:h-44 ${activeProduct.bgColor} rounded-2xl p-3 sm:p-4 flex items-center justify-center mb-4 sm:mb-5 shadow-inner overflow-hidden`}>
+              <img 
+                src={activeProduct.img} 
+                alt={activeProduct.name} 
+                className="max-h-full max-w-full object-contain drop-shadow-[0_10px_10px_rgba(0,0,0,0.15)] sm:drop-shadow-[0_15px_15px_rgba(0,0,0,0.2)]" 
+              />
             </div>
 
-            <h4 className="font-heading text-xl text-[#134323] text-center uppercase tracking-wide mb-1">
+            {/* TEXTOS DINÁMICOS ACORDES A LA PANTALLA */}
+            <h4 className="font-heading text-2xl sm:text-4xl text-[#134323] text-center uppercase tracking-wide leading-tight mb-0.5">
               {activeProduct.name}
             </h4>
-            <p className="font-body font-bold text-[#080708]/50 text-xs mb-4">
+            <p className="font-body font-bold text-[#080708]/50 text-xs sm:text-sm mb-4 sm:mb-5">
               Precio Unitario: ${activeProduct.price}.00 MXN
             </p>
 
-            <div className="w-full text-center space-y-1 mb-4">
-              <span className="block font-body font-bold text-[10px] uppercase text-[#134323]/60 tracking-wider">
+            {/* CONTADOR EN COMODIDAD MÓVIL */}
+            <div className="w-full text-center space-y-1 sm:space-y-2 mb-4 sm:mb-5">
+              <span className="block font-body font-bold text-[10px] sm:text-xs uppercase text-[#134323]/60 tracking-wider">
                 Selecciona la Cantidad
               </span>
-              <div className="flex items-center justify-center gap-3 bg-[#FDF9F2] py-1.5 px-3 rounded-xl border border-[#134323]/5 max-w-[160px] mx-auto">
+              <div className="flex items-center justify-center gap-3 sm:gap-4 bg-[#FDF9F2] py-1.5 sm:py-2 px-4 rounded-xl sm:rounded-2xl border border-[#134323]/10 max-w-[150px] sm:max-w-[180px] mx-auto shadow-sm">
                 <button 
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                  className="w-8 h-8 bg-white rounded-lg font-heading text-lg shadow-sm text-[#134323] cursor-pointer"
+                  className="w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-lg sm:rounded-xl font-heading text-lg sm:text-xl shadow-md text-[#134323] cursor-pointer"
                 >
                   -
                 </button>
-                <span className="font-heading text-xl w-6 text-center text-[#080708]">
+                <span className="font-heading text-xl sm:text-2xl w-6 sm:w-8 text-center text-[#080708] select-none">
                   {quantity}
                 </span>
                 <button 
                   onClick={() => setQuantity(quantity + 1)}
-                  className="w-8 h-8 bg-white rounded-lg font-heading text-lg shadow-sm text-[#134323] cursor-pointer"
+                  className="w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-lg sm:rounded-xl font-heading text-lg sm:text-xl shadow-md text-[#134323] cursor-pointer"
                 >
                   +
                 </button>
               </div>
             </div>
 
-            <div className="w-full bg-[#134323]/5 border border-[#134323]/10 p-3 rounded-xl text-center mb-4">
-              <span className="block font-body text-[10px] font-bold uppercase tracking-wider text-[#080708]/40">Total Estimado</span>
-              <span className="font-heading text-2xl text-[#134323] tracking-wide">
-                ${activeProduct.price * quantity}.00 MXN
-              </span>
+            {/* RECUADRO DE TOTALES ESCALABLE */}
+            <div className="w-full bg-[#134323]/5 border border-[#134323]/10 p-3 sm:p-4 rounded-xl sm:rounded-2xl text-center mb-4 sm:mb-5 space-y-1">
+              {discountPercent > 0 ? (
+                <>
+                  <div className="flex justify-between items-center text-xs font-body px-1 text-[#080708]/60">
+                    <span>Subtotal:</span>
+                    <span className="line-through">${subtotal}.00</span>
+                  </div>
+                  <div className="flex justify-between items-center text-xs font-body px-1 text-[#60A62E] font-bold">
+                    <span>Ahorro {discountType}:</span>
+                    <span>-${discountAmount.toFixed(2)}</span>
+                  </div>
+                </>
+              ) : (
+                <div className="text-[10px] sm:text-xs font-body text-[#080708]/60 font-semibold uppercase tracking-wide px-1">
+                  
+                </div>
+              )}
+              
+              <div className="pt-1.5 sm:pt-2 border-t border-[#134323]/10 flex justify-between items-center px-1">
+                <span className="font-body font-bold text-xs sm:text-sm uppercase text-[#080708]/60">Total Final:</span>
+                <span className="font-heading text-xl sm:text-3xl text-[#134323] tracking-wide">
+                  ${totalFinal.toFixed(2)} MXN
+                </span>
+              </div>
             </div>
 
-            <a 
-              href={`https://wa.me/+523311325566?text=${encodeURIComponent(
-                `¡Hola Flavor Land! Me interesa hacer un pedido.\n\n` +
-                `📦 Producto: ${activeProduct.name}\n` +
-                `🔢 Cantidad: ${quantity} bolsa(s)\n` +
-                `💰 Total estimado: $${activeProduct.price * quantity}.00 MXN`
-              )}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setActiveProduct(null)}
-              className={`w-full ${activeProduct.btnColor} text-white text-center font-heading py-3 rounded-xl transition-all duration-300 tracking-wide text-base shadow-md flex items-center justify-center uppercase`}
-            >
-              📱 Confirmar Pedido
-            </a>
 
-          </div>
-        </div>
-      )}
-    </section>
-  );
-}
+            {/* ENLACE DE WHATSAPP 100% SINTÁCTICAMENTE CERRADO */}
+          <a 
+              
+href={`https://wa.me/+523311325566?text=${encodeURIComponent( 
+                `¡Hola Flavor Land! Me interesa hacer un pedido.\n\n` + 
+                `
+📦
+ Producto: ${activeProduct.name}\n` + 
+                `
+🔢
+ Cantidad: ${quantity} bolsa(s)\n` + 
+                `
+💰
+ Total estimado: $${activeProduct.price * 
+quantity}.00 MXN` 
+              )}`} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              onClick={() => setActiveProduct(null)} 
+              className={`w-full ${activeProduct.btnColor} text-white 
+text-center font-heading py-3 rounded-xl transition-all duration-300 
+tracking-wide text-base shadow-md flex items-center justify-center 
+uppercase`} 
+            > 
+             📱 Confirmar Pedido 
+            </a> 
+ 
+          </div> 
+        </div> 
+      )} 
+    </section> 
+  ); 
+} 
+
