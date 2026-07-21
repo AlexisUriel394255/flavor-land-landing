@@ -230,7 +230,7 @@ export default function ProductGrid() {
           <a 
               
 href={`https://wa.me/+523311325566?text=${encodeURIComponent( 
-                `¡Hola Flavor Land! Me interesa hacer un pedido.\n\n` + 
+                `¡Hola Flavor Land! Me interesa hacer un pedido.\n` + 
                 `
 📦
  Producto: ${activeProduct.name}\n` + 
