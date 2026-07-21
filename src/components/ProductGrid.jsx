@@ -14,9 +14,9 @@ const productsData = [
   },
   {
     id: 2,
-    name: 'Camote con Canela',          
+    name: 'Camote con Adobada',          
     tag: 'Dulce / Crunch',              
-    img: '/images/camoteconcanela.webp', 
+    img: '/images/camoteadobado.webp', 
     price: 80,
     bgColor: 'bg-[#E28731]/10',
     textColor: 'text-[#E28731]',
