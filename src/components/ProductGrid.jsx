@@ -28,7 +28,7 @@ const productsData = [
     hasSizes: true,
     sizes: [
       { label: 'Normal', price: 80, img: '/images/camoteadobado.webp', allowsDiscount: true },
-      { label: '85g', price: 38, img: '/images/camoteadobado85.webp', allowsDiscount: false }
+      { label: '85g', price: 35, img: '/images/camoteadobado85.webp', allowsDiscount: false }
     ]
   },
   {
@@ -43,7 +43,7 @@ const productsData = [
     hasSizes: true,
     sizes: [
       { label: 'Normal', price: 80, img: '/images/jicamaconchile.webp', allowsDiscount: true },
-      { label: '85g', price: 38, img: '/images/jicamaconchile85.webp', allowsDiscount: false }
+      { label: '85g', price: 35, img: '/images/jicamaconchile85.webp', allowsDiscount: false }
     ]
   },
   {
@@ -58,7 +58,7 @@ const productsData = [
     hasSizes: true,
     sizes: [
       { label: 'Normal', price: 80, img: '/images/jicamaconlimon.webp', allowsDiscount: true },
-      { label: '85g', price: 38, img: '/images/jicamaconlimon85.webp', allowsDiscount: false }
+      { label: '85g', price: 35, img: '/images/jicamaconlimon85.webp', allowsDiscount: false }
     ]
   },
   {
@@ -73,7 +73,7 @@ const productsData = [
     hasSizes: true,
     sizes: [
       { label: 'Normal', price: 80, img: '/images/platanoconcanela.webp', allowsDiscount: true },
-      { label: '100g', price: 45, img: '/images/platanoconcanela100.webp', allowsDiscount: false }
+      { label: '100g', price: 35, img: '/images/platanoconcanela100.webp', allowsDiscount: false }
     ]
   }
 ];
