@@ -156,9 +156,11 @@ export default function ProductGrid() {
                 />
               </div>
               
+                            {/* Cambiamos el texto estático por la variable de precio real */}
               <span className={`text-xs font-body font-bold uppercase tracking-widest mb-2 ${product.textColor}`}>
-                {product.tag} — Desde ${product.sizes ? product.sizes.price : product.price} MXN
+                {product.tag} — ${product.price}.00 MXN
               </span>
+
               
               <h3 className="font-heading text-2xl md:text-3xl text-[#080708] text-center mb-6 uppercase tracking-wide">
                 {product.name}
