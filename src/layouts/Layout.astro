@@ -19,27 +19,25 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		
-		     <!-- Google Fonts Oficial: Identidad Flavor Land (Fredoka + Poppins) -->
-     <!-- Google Fonts Oficial Corregida (Orden Alfabético de Ejes Variables) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wdth,wght@98.3,510&display=swap" rel="stylesheet">
+		<!-- Google Fonts Oficial: Corregimos las preconexiones a los servidores oficiales de Google -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- 🚀 PRECARGA CRÍTICA PARA REVENTAR EL 100/100 EN GOOGLE PAGESPEED -->
-    <link 
-      rel="preload" 
-      href="https://gstatic.com" 
-      as="font" 
-      type="font/woff2" 
-      crossorigin="anonymous" 
-    />
+		<!-- Tu enlace exacto de Fredoka que te dio el 92 en celulares -->
+		<link href="https://fonts.googleapis.com/css2?family=Fredoka:wdth,wght@98.3,510&display=swap" rel="stylesheet">
 
-
+		<!-- Tu precarga crítica que te funcionó en el score de Android -->
+		<link 
+			rel="preload" 
+			href="https://gstatic.com" 
+			as="font" 
+			type="font/woff2" 
+			crossorigin="anonymous" 
+		/>
 	</head>
-		<!-- Cambiamos font-body por font-sans para activar Poppins en todo el sitio -->
+
+	<!-- Cambiamos font-body por font-sans para activar Poppins en todo el sitio -->
 	<body class="bg-brand-bg-cream font-sans text-brand-dark min-h-screen antialiased">
 		<slot />
 	</body>
-
 </html>
