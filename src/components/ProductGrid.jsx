@@ -193,18 +193,13 @@ export default function ProductGrid() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-10 items-center w-full mt-2">
               
               {/* Columna Izquierda: Imagen responsiva (Grande en PC, compacta en móvil) */}
-                            {/* Columna Izquierda: Imagen responsiva (Grande en PC, compacta en móvil) */}
               <div className={`w-full ${activeProduct.bgColor} rounded-2xl p-4 sm:p-8 flex items-center justify-center aspect-square shadow-inner overflow-hidden max-w-[180px] sm:max-w-full mx-auto`}>
-                {/* 🚀 AGREGAMOS WIDTH Y HEIGHT AL MODELO INTERACTIVO PARA EVITAR EL SALTO DE DISEÑO */}
                 <img
                   src={selectedSize ? selectedSize.img : activeProduct.img}
                   alt={activeProduct.name}
                   className="max-h-full max-w-full object-contain drop-shadow-[0_12px_12px_rgba(0,0,0,0.15)] sm:drop-shadow-[0_20px_25px_rgba(0,0,0,0.22)] transition-transform duration-300 hover:scale-105"
-                  width="300"
-                  height="300"
                 />
               </div>
-
 
               {/* Columna Derecha: Controles del Producto */}
               <div className="flex flex-col w-full sm:text-left text-center">
