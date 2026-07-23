@@ -19,21 +19,12 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		
-		<!-- Google Fonts Oficial: Corregimos las preconexiones a los servidores oficiales de Google -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<!-- Conexiones oficiales y limpias con los servidores de Google Fonts -->
+		<link rel="preconnect" href="https://googleapis.com">
+		<link rel="preconnect" href="https://gstatic.com" crossorigin>
 
-		<!-- Tu enlace exacto de Fredoka que te dio el 92 en celulares -->
-		<link href="https://fonts.googleapis.com/css2?family=Fredoka:wdth,wght@98.3,510&display=swap" rel="stylesheet">
-
-		<!-- Tu precarga crítica que te funcionó en el score de Android -->
-		<link 
-			rel="preload" 
-			href="https://gstatic.com" 
-			as="font" 
-			type="font/woff2" 
-			crossorigin="anonymous" 
-		/>
+		<!-- Tu enlace exacto de Fredoka con el truco del swap para máximo rendimiento -->
+		<link href="https://googleapis.com/css2?family=Fredoka:wdth,wght@98.3,510&display=swap" rel="stylesheet">
 	</head>
 
 	<!-- Cambiamos font-body por font-sans para activar Poppins en todo el sitio -->
