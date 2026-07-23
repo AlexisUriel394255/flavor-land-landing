@@ -1,4 +1,4 @@
-# Configuración avanzada de Netlify para compresión Brotli y caché extrema
+# Configuración avanzada de Netlify para caché extrema sin conflictos de compresión
 [[headers]]
   for = "/*"
   [headers.values]
@@ -7,7 +7,6 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Cache-Control = "public, max-age=31536000, immutable"
-    Content-Encoding = "br"
 
 [[headers]]
   for = "/*.html"
