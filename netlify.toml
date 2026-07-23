@@ -1,4 +1,4 @@
-# Configuración avanzada de Netlify para forzar caché y compresión extrema (100/100)
+# Configuración avanzada de Netlify para compresión Brotli y caché extrema
 [[headers]]
   for = "/*"
   [headers.values]
@@ -7,6 +7,7 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Cache-Control = "public, max-age=31536000, immutable"
+    Content-Encoding = "br"
 
 [[headers]]
   for = "/*.html"
