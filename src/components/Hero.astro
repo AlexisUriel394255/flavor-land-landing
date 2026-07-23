@@ -12,7 +12,7 @@
         🍿 SNACKS FIT & 100% NATURALES
       </span>
       
-             <!-- Ajustamos la jerarquía visual del nuevo eslogan -->
+      <!-- Ajustamos la jerarquía visual del nuevo eslogan -->
       <h1 class="font-heading text-4xl sm:text-5xl md:text-6xl text-brand-green-dark leading-[1.1] tracking-wide select-none font-normal">
         <span class="text-3xl sm:text-4xl md:text-5xl opacity-90 block mb-1">Las penas con</span>
         <span class="text-5xl sm:text-6xl md:text-7xl block text-brand-green-light uppercase tracking-wider my-2">FLAVOR LAND</span>
@@ -22,11 +22,9 @@
         </span>
       </h1>
 
-     <p class="font-body text-lg md:text-xl text-brand-dark/80 max-w-xl leading-relaxed font-semibold">
-  Las frutas y vegetales crujientes te darán el gusto de disfrutar <span class="text-brand-green-light font-bold">una rica botana saludable</span>.
-</p>
-
-
+      <p class="font-body text-lg md:text-xl text-brand-dark/80 max-w-xl leading-relaxed font-semibold">
+        Las frutas y vegetables crujientes te darán el gusto de disfrutar <span class="text-brand-green-light font-bold">una rica botana saludable</span>.
+      </p>
 
       <div class="pt-2 flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center">
         <a 
@@ -44,11 +42,39 @@
       </div>
     </div>
 
-    <!-- Bloque Derecho -->
+    <!-- 🚀 BLOQUE DERECHO REDISEÑADO PARA REVENTAR EL SCORE 100/100 SIN ALTERAR LA PC -->
     <div class="md:col-span-5 flex justify-center relative min-h-[350px]">
-      <img src="/images/logotipo.webp" alt="Flavor Land Logo" class="w-full max-w-[340px] h-auto object-contain opacity-80 drop-shadow-xl" loading="eager" />
-      <img src="/images/betabeladobado.webp" alt="Betabel Adobado" class="absolute -left-4 bottom-0 w-32 h-auto object-contain drop-shadow-lg transform -rotate-12 hover:scale-110 transition-transform duration-300 hidden sm:block" loading="eager" />
-      <img src="/images/camoteadobado.webp" alt="Camote Adobado" class="absolute -right-4 top-4 w-32 h-auto object-contain drop-shadow-lg transform rotate-12 hover:scale-110 transition-transform duration-300 hidden sm:block" loading="eager" />
+      {/* El Logotipo Principal: Es el elemento LCP más importante en la pantalla de Android */}
+      <img 
+        src="/images/logotipo.webp" 
+        alt="Flavor Land Logo" 
+        class="w-full max-w-[340px] h-auto object-contain opacity-80 drop-shadow-xl" 
+        loading="eager" 
+        fetchpriority="high"
+        decoding="sync"
+        width="340"
+        height="340"
+      />
+      {/* Las bolsas flotantes: Cambiamos a loading lazy y decoding async para quitarle carga de red al inicio. 
+          En pantallas grandes (PC) se verán exactamente iguales y flotando con sus efectos intactos */}
+      <img 
+        src="/images/betabeladobado.webp" 
+        alt="Betabel Adobado" 
+        class="absolute -left-4 bottom-0 w-32 h-auto object-contain drop-shadow-lg transform -rotate-12 hover:scale-110 transition-transform duration-300 hidden sm:block" 
+        loading="lazy" 
+        decoding="async"
+        width="128"
+        height="180"
+      />
+      <img 
+        src="/images/camoteadobado.webp" 
+        alt="Camote Adobado" 
+        class="absolute -right-4 top-4 w-32 h-auto object-contain drop-shadow-lg transform rotate-12 hover:scale-110 transition-transform duration-300 hidden sm:block" 
+        loading="lazy" 
+        decoding="async"
+        width="128"
+        height="180"
+      />
     </div>
 
   </div>
