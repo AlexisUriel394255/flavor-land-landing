@@ -13,7 +13,7 @@ const productsData = [
     hasSizes: true,
     sizes: [
       { label: 'Normal', price: 110, img: '/images/betabeladobado.webp', allowsDiscount: true },
-      { label: '100g', price: 45, img: '/images/betabeladobado75.webp', allowsDiscount: false }
+      { label: '75g', price: 45, img: '/images/betabeladobado75.webp', allowsDiscount: false }
     ]
   },
   {
