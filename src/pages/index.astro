@@ -3,6 +3,7 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import ProductGrid from '../components/ProductGrid.jsx';
+import Resenas from '../components/Resenas.jsx';
 import Footer from '../components/Footer.astro'; // <-- 1. IMPORTAMOS EL FOOTER AQUÍ
 import '../styles/global.css'; 
 ---
@@ -44,6 +45,9 @@ import '../styles/global.css';
 
     <!-- Catálogo Interactivo en React -->
     <ProductGrid client:load />
+
+    <Resenas client:load />
+
   </main>
 
   <!-- 2. INSERTAMOS EL FOOTER AL FINAL DE LA PÁGINA -->
